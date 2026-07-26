@@ -4,6 +4,7 @@ Welcome to the dmroute module documentation.
 
 ## Contents
 
+- **[dmroute.md](dmroute.md)** - Overview and architecture
 - **[api-reference.md](api-reference.md)** - Complete API documentation
 
 ## Quick Reference
@@ -15,6 +16,6 @@ Welcome to the dmroute module documentation.
 View documentation using `dmf-man`:
 
 ```bash
-dmf-man dmroute          # Main documentation
-dmf-man dmroute api      # API reference
+dmf-man dmroute                # Main documentation
+dmf-man dmroute api-reference   # API reference
 ```

@@ -64,16 +64,19 @@ dmod_add_library(${DMOD_MODULE_NAME} ${DMOD_MODULE_VERSION}
     src/dmroute.c
 )
 
-target_include_directories(${DMOD_MODULE_NAME} PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-
 target_include_directories(${DMOD_MODULE_NAME}_if INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-# To depend on another module's headers, use:
-#   dmod_link_modules(${DMOD_MODULE_NAME}
-#       other_module@1.0
-#   )
+# dmroute has no dependency on any other in-tree module - it owns the
+# address type (dmroute_addr_t) rather than borrowing it from dmip, and has
+# no dependency on dmnetif either - see docs/dmroute.md for why.
+
+# dmlist: backs the route table
+# dmosi:  mutex guarding the route table
+dmod_link_modules(${DMOD_MODULE_NAME}
+    dmlist
+    dmosi
+)
+
 add_subdirectory(tests)
