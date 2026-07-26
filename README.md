@@ -63,13 +63,10 @@ dmroute/
 └── dmroute.dmr
 ```
 
-LICENSE is shared with the rest of the `dmnet` repository (`../../LICENSE`) -
-see `dmroute.dmr` for how it's picked up during packaging.
-
 ## Author
 
 Patryk Kubiak
 
 ## License
 
-MIT
+MIT License (see LICENSE file for details)
