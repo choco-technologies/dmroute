@@ -1,0 +1,5 @@
+# Include dynamically generated versions list from latest release
+$include https://github.com/choco-technologies/dmroute/releases/download/vlatest/versions.dmm
+
+# Module entry with version placeholder - expanded by $version-available
+dmroute https://github.com/choco-technologies/dmroute/releases/download/v<version>/dmroute-v<version>-<arch_name>.zip
