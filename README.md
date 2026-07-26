@@ -77,9 +77,14 @@ binary (see [Testing](#testing) below). Pass `-DDMOD_DIR=/path/to/local/dmod`
 to build against a local dmod checkout instead of fetching it from GitHub, and
 `-DDMOD_MODULE_VERSION=x.y` to override the module version (defaults to `0.1`).
 
-A Make-based build is also available (`make` at the repo root) for embedded
-targets, driven by the same `dmod`/`paths.mk` machinery; it builds the
-`dmroute` module itself and does not build the test suite.
+A Make-based build is also available for embedded targets, driven by the
+same `dmod`/`paths.mk` machinery; it requires an existing `dmod` checkout
+(there is no FetchContent equivalent for Make) and builds the `dmroute`
+module itself, not the test suite:
+
+```bash
+make DMOD_MODE=DMOD_MODULE DMOD_DIR=/path/to/dmod
+```
 
 ## Testing
 
