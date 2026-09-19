@@ -241,7 +241,7 @@ int dmod_init(const Dmod_Config_t *Config)
      * be tagged to the module, or it dies with the first process that happened
      * to pull it in, leaving this pointer aimed at whatever gets allocated
      * there next. */
-    g_routes = dmlist_create(DMOD_CURRENT_ALLOCATOR);
+    g_routes = dmlist_create();
     g_mutex  = dmosi_mutex_create(false);
     if (g_routes == NULL || g_mutex == NULL)
     {
